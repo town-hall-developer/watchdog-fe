@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="CargoProjects">
+    <cargoProject FILE="$PROJECT_DIR$/server/watchdog-be/Cargo.toml" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="48fb262e-2dd9-479f-8aa5-e39420c5a33c" name="Changes" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="TypeScript JSX File" />
+        <option value="TypeScript File" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="KubernetesApiPersistence">
+    <option name="context" value="arn:aws:eks:ap-northeast-2:193362923626:cluster/sigor-cluster" />
+  </component>
+  <component name="MacroExpansionManager">
+    <option name="directoryName" value="0geqcrvo" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectId" id="2HWABxsf7kouZC8hFYsTIeTlmpj" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="1" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "last_opened_file_path": "/Users/jaehong21/Desktop/townhall/watchdog-fe",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.standard": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.standard": "",
+    "nodejs_package_manager_path": "npm",
+    "org.rust.cargo.project.model.PROJECT_DISCOVERY": "true",
+    "prettierjs.PrettierConfiguration.Package": "/Users/jaehong21/Desktop/townhall/watchdog-fe/node_modules/prettier",
+    "settings.editor.selected.configurable": "settings.javascript.prettier",
+    "ts.external.directory.path": "/Users/jaehong21/Desktop/townhall/watchdog-fe/node_modules/typescript/lib",
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/components/query" />
+      <recent name="$PROJECT_DIR$/dump" />
+      <recent name="$PROJECT_DIR$/utils" />
+      <recent name="$PROJECT_DIR$/public" />
+      <recent name="$PROJECT_DIR$/assets" />
+    </key>
+  </component>
+  <component name="RustProjectSettings">
+    <option name="toolchainHomeDirectory" value="$USER_HOME$/.cargo/bin" />
+    <option name="version" value="2" />
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="48fb262e-2dd9-479f-8aa5-e39420c5a33c" name="Changes" comment="" />
+      <created>1668390334005</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1668390334005</updated>
+      <workItem from="1668390335161" duration="6189000" />
+      <workItem from="1668402183906" duration="750000" />
+      <workItem from="1668403459714" duration="11000" />
+      <workItem from="1668403849556" duration="314000" />
+      <workItem from="1668404988949" duration="3715000" />
+      <workItem from="1668423729762" duration="368000" />
+      <workItem from="1668434136047" duration="5659000" />
+      <workItem from="1668441007116" duration="540000" />
+      <workItem from="1668463275510" duration="89000" />
+      <workItem from="1668463414827" duration="113000" />
+      <workItem from="1668463546574" duration="82000" />
+      <workItem from="1668463635075" duration="14000" />
+      <workItem from="1668463655542" duration="22000" />
+      <workItem from="1668463680148" duration="3000" />
+      <workItem from="1668463689533" duration="3000" />
+      <workItem from="1669113439189" duration="1199000" />
+      <workItem from="1669211746769" duration="49000" />
+      <workItem from="1669211800855" duration="916000" />
+      <workItem from="1669460715864" duration="804000" />
+      <workItem from="1669464642867" duration="637000" />
+      <workItem from="1669467426240" duration="270000" />
+      <workItem from="1669469320616" duration="5672000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+</project>
