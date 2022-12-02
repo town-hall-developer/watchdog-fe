@@ -4,10 +4,11 @@ import { ParseResponse, QueryResponse } from "../../utils/api";
 import LogList from "./LogList";
 import ParseInput from "./ParseInput";
 import LogGeneral from "./LogGeneral";
+import LogAnalysis from "./LogAnalysis";
 
 const Query: React.FC = () => {
   const [input, setInput] = React.useState(
-    'find({path~=/}["2021-11-01 11:12:21", "2023-12-31 01:45:12"], nginx)'
+    'find({path~=/}["2021-12-01 11:12:21", "2023-12-31 01:45:12"], nginx)'
   );
   const [parseResult, setParseResult] = React.useState<ParseResponse>();
   const [queryResult, setQueryResult] = React.useState<QueryResponse[]>([]);
@@ -31,6 +32,7 @@ const Query: React.FC = () => {
       >
         <Tab value={1} text="General" />
         <Tab value={2} text="List" />
+        <Tab value={3} text="Analysis" />
       </TabList>
 
       {selectedView === 1 &&
@@ -59,6 +61,7 @@ const Query: React.FC = () => {
           )*/
         ))}
       {selectedView === 2 && <LogList data={queryResult} />}
+      {selectedView === 3 && <LogAnalysis data={queryResult} />}
     </Card>
   );
 };

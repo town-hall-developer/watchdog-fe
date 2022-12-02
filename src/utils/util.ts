@@ -22,6 +22,7 @@ export const verifyField = (field?: string): boolean => {
     "user_agent",
     "remote_addr",
     "timestamp",
+    "type",
   ];
   return keys.indexOf(field || "") !== -1;
 };

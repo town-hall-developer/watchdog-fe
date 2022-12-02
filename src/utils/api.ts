@@ -40,6 +40,7 @@ export interface QueryResponse {
   method: string;
   user_agent: string;
   datasource: "nginx" | "alb";
+  type?: "abnormal" | "normal";
 }
 
 export const postParse = async (query: string): Promise<ParseResponse> => {

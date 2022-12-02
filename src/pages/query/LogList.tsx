@@ -48,7 +48,11 @@ const LogList: React.FC<LogListProps> = ({ data }) => {
             data.map((item) => (
               <TableRow key={Math.random()}>
                 <TableCell>
-                  <div>{item.path}</div>
+                  <div>
+                    {item.path.length > 50
+                      ? item.path.slice(0, 50) + "..."
+                      : item.path}
+                  </div>
                 </TableCell>
                 <TableCell textAlignment="text-center">
                   <div>{item.protocol}</div>
@@ -69,7 +73,10 @@ const LogList: React.FC<LogListProps> = ({ data }) => {
                   {item.timestamp}
                 </TableCell>
                 <TableCell textAlignment="text-center">
-                  <Badge text={"Normal"} color={"green"} />
+                  <Badge
+                    text={item.type || "undefined"}
+                    color={item.type === "normal" ? "green" : "red"}
+                  />
                 </TableCell>
               </TableRow>
             ))}

@@ -61,7 +61,9 @@ const ParseBadge: React.FC<ParseBadgeProps> = (result) => {
         <div style={{ display: "flex", marginTop: "10px" }}>
           <Badge
             icon={CalendarDaysIcon}
-            text={"start = " + getDateFormat(result.condition?.date.end) || ""}
+            text={
+              "start = " + getDateFormat(result.condition?.date.start) || ""
+            }
             color="green"
           />
           <div style={{ width: "5px" }} />

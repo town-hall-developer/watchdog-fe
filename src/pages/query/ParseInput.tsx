@@ -57,7 +57,7 @@ const ParseInput: React.FC<ParseInputProps> = ({
         }}
       >
         {
-          'ex) find({path~=/}["2021-11-01 11:12:21", "2023-12-31 01:45:12"], nginx)'
+          'ex) find({path~=/}["2021-12-01 11:12:21", "2023-12-31 01:45:12"], nginx)'
         }
       </div>
       <input

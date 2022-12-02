@@ -14,9 +14,9 @@ import {
   Title,
 } from "@tremor/react";
 import {
-  CircleStackIcon,
   ClipboardIcon,
   LinkIcon,
+  ShieldExclamationIcon,
 } from "@heroicons/react/24/solid";
 import * as _ from "lodash";
 import { sortData } from "../../utils/util";
@@ -26,8 +26,6 @@ interface LogGeneralProps {
   parseResult?: ParseResponse;
 }
 const LogGeneral: React.FC<LogGeneralProps> = ({ data, parseResult }) => {
-  // console.log(Object.keys(_.countBy(data, "timestamp")));
-
   const barData = (data: QueryResponse[], iteratee: string): any[] => {
     let keys = Object.keys(_.countBy(data, iteratee));
     let values = Object.values(_.countBy(data, iteratee));
@@ -38,19 +36,6 @@ const LogGeneral: React.FC<LogGeneralProps> = ({ data, parseResult }) => {
       };
     });
   };
-  const donutData = (data: QueryResponse[]): any[] => {
-    let keys = Object.keys(_.countBy(data, "status"));
-    let values = Object.values(_.countBy(data, "status"));
-    return keys.map((key, index) => {
-      return {
-        name: key,
-        value: values[index],
-      };
-    });
-  };
-  // const valueFormatter = (number: number) =>
-  //   `${Intl.NumberFormat("us").format(number).toString()} $`;
-
   const categories: {
     title: string;
     metric: string;
@@ -64,16 +49,16 @@ const LogGeneral: React.FC<LogGeneralProps> = ({ data, parseResult }) => {
       color: "indigo",
     },
     {
+      title: "Number of Abnormal Requests",
+      metric: String(_.filter(data, ["type", "abnormal"]).length),
+      icon: ShieldExclamationIcon,
+      color: "amber",
+    },
+    {
       title: "Number of Paths",
       metric: String(Object.keys(_.countBy(data, "path")).length),
       icon: LinkIcon,
       color: "fuchsia",
-    },
-    {
-      title: "Datasource",
-      metric: "test",
-      icon: CircleStackIcon,
-      color: "amber",
     },
   ];
 
@@ -134,7 +119,7 @@ const LogGeneral: React.FC<LogGeneralProps> = ({ data, parseResult }) => {
         />
       </Card>
       <Card>
-        <Title>Requests by clients</Title>
+        <Title>Requests by user_agent</Title>
         <Flex marginTop="mt-6">
           <Text>
             <Bold>Path</Bold>
