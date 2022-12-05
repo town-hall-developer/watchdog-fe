@@ -18,6 +18,7 @@ interface ParseInputProps {
     React.SetStateAction<ParseResponse | undefined>
   >;
   setQueryResult: React.Dispatch<React.SetStateAction<QueryResponse[]>>;
+  setLoading: React.Dispatch<React.SetStateAction<boolean>>;
 }
 const ParseInput: React.FC<ParseInputProps> = ({
   input,
@@ -25,6 +26,7 @@ const ParseInput: React.FC<ParseInputProps> = ({
   parseResult,
   setParseResult,
   setQueryResult,
+  setLoading,
 }) => {
   const verifyAllField = (
     field:
@@ -80,7 +82,7 @@ const ParseInput: React.FC<ParseInputProps> = ({
         }}
         onKeyPress={(e) => {
           if (e.key === "Enter") {
-            postParse(input).then((r) => setParseResult(r));
+            postParse(input, setLoading).then((r) => setParseResult(r));
           }
         }}
       />
@@ -103,7 +105,23 @@ const ParseInput: React.FC<ParseInputProps> = ({
           {!parseResult && "None"}
           {parseResult && <div>{parseResult.status}</div>}
           <Subtitle>
-            {parseResult?.status === "fail" && parseResult.error}
+            {parseResult?.status === "fail" &&
+              parseResult?.errors?.map((item, index) => {
+                return (
+                  <>
+                    <div
+                      key={Math.random()}
+                      style={{
+                        fontWeight: "bold",
+                        marginTop: "5px",
+                        color: "#7d7d7d",
+                      }}
+                    >
+                      {index + 1 + ". " + item.error}
+                    </div>
+                  </>
+                );
+              })}
           </Subtitle>
         </Metric>
         {parseResult?.status === "success" && (
@@ -120,9 +138,9 @@ const ParseInput: React.FC<ParseInputProps> = ({
           color="blue"
           importance="primary"
           handleClick={() => {
-            postParse(input).then((r) => setParseResult(r));
+            postParse(input, setLoading).then((r) => setParseResult(r));
             if (parseResult?.status === "success") {
-              postQuery(input).then((r) => setQueryResult(r));
+              postQuery(input, setLoading).then((r) => setQueryResult(r));
             }
           }}
           disabled={

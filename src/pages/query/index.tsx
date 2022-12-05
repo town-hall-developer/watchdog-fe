@@ -5,6 +5,7 @@ import LogList from "./LogList";
 import ParseInput from "./ParseInput";
 import LogGeneral from "./LogGeneral";
 import LogAnalysis from "./LogAnalysis";
+import { SyncLoader } from "react-spinners";
 
 const Query: React.FC = () => {
   const [input, setInput] = React.useState(
@@ -12,6 +13,7 @@ const Query: React.FC = () => {
   );
   const [parseResult, setParseResult] = React.useState<ParseResponse>();
   const [queryResult, setQueryResult] = React.useState<QueryResponse[]>([]);
+  const [loading, setLoading] = React.useState(false);
 
   const [selectedView, setSelectedView] = React.useState(1);
 
@@ -23,6 +25,7 @@ const Query: React.FC = () => {
         parseResult={parseResult}
         setParseResult={setParseResult}
         setQueryResult={setQueryResult}
+        setLoading={setLoading}
       />
 
       <TabList
@@ -35,33 +38,44 @@ const Query: React.FC = () => {
         <Tab value={3} text="Analysis" />
       </TabList>
 
-      {selectedView === 1 &&
+      {loading && (
+        <div
+          style={{
+            display: "flex",
+            flexDirection: "column",
+            alignItems: "center",
+            justifyContent: "center",
+            marginTop: "30px",
+          }}
+        >
+          <SyncLoader
+            style={{ opacity: 0.7 }}
+            color={"#3b82f6"}
+            loading={loading}
+            size={70}
+            margin={7}
+            aria-label="Loading Spinner"
+            data-testid="loader"
+          />
+          <div
+            style={{
+              color: "#7d7d7d",
+              fontSize: "18px",
+              marginTop: "10px",
+            }}
+          >
+            Loading...
+          </div>
+        </div>
+      )}
+      {!loading &&
+        selectedView === 1 &&
         queryResult &&
-        (queryResult.length > 0 ? (
+        queryResult.length > 0 && (
           <LogGeneral data={queryResult} parseResult={parseResult} />
-        ) : (
-          <></>
-          /*parseResult && (
-            <div style={{ width: "400px" }}>
-              <Card marginTop="mt-6" decoration="top" decorationColor="amber">
-                <Flex justifyContent="justify-start" spaceX="space-x-4">
-                  <Icon
-                    icon={ShieldExclamationIcon}
-                    variant="light"
-                    size="xl"
-                    color="amber"
-                  />
-                  <Block truncate={true}>
-                    <Text>Result</Text>
-                    <Metric truncate={true}>Not Found</Metric>
-                  </Block>
-                </Flex>
-              </Card>
-            </div>
-          )*/
-        ))}
-      {selectedView === 2 && <LogList data={queryResult} />}
-      {selectedView === 3 && <LogAnalysis data={queryResult} />}
+        )}
+      {!loading && selectedView === 2 && <LogList data={queryResult} />}
+      {!loading && selectedView === 3 && <LogAnalysis data={queryResult} />}
     </Card>
   );
 };

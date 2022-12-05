@@ -47,7 +47,7 @@ const LogAnalysis: React.FC<LogAnalysisProps> = ({ data }) => {
         ).length,
       });
     });
-    setAreaChartData(areaChartData);
+    setAreaChartData(_.sortBy(areaChartData, ["date"]));
   };
   return (
     <AreaChart
